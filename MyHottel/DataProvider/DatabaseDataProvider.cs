@@ -1,4 +1,4 @@
-﻿using MyHottel.DBContext.ApplicationContext;
+using MyHottel.DBContext.ApplicationContext;
 using MyHottel.Models;
 using System.Linq;
 
@@ -10,9 +10,7 @@ namespace MyHottel.DataProvider
     {
         private ApplicationContext Db = new ApplicationContext();
 
-        private readonly List<T> _data;
-
-     
+        public List<T> ListOfEntity = new List<T>();
 
         public DatabaseDataProvider()
         {
@@ -32,7 +30,10 @@ namespace MyHottel.DataProvider
 
         public T GetById(int Id)
         {
-            return _data.First(d => d.Id == Id);
+            var selected = (from itemOfList in ListOfEntity
+                    where itemOfList.Id == Id
+                    select itemOfList) as T;
+            return selected;
         }
 
         public void Update(T entity)
