@@ -10,7 +10,7 @@ namespace MyHottel.DataProvider
 
     public class DatabaseDataProvider<T> : IDataProvider<T> where T : EntityBase
     {
-        private  ApplicationContext Db = new ApplicationContext();
+        ApplicationContext Db = new();
 
         //private readonly  List<T> _data;
         public List<T> ListOfEntity = new();
