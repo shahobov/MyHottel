@@ -6,8 +6,6 @@ using System.Xml.Linq;
 
 namespace MyHottel.DataProvider
 {
-
-
     public class DatabaseDataProvider<T> : IDataProvider<T> where T : EntityBase
     {
         ApplicationContext Db = new();
@@ -16,9 +14,9 @@ namespace MyHottel.DataProvider
         public List<T> ListOfEntity = new();
 
 
-        public DatabaseDataProvider()
+        public DatabaseDataProvider(List<T> data)
         {
-        
+            ListOfEntity = data;
         }
 
         public void Add(T entity)
@@ -29,7 +27,7 @@ namespace MyHottel.DataProvider
 
         public void Delete(T entity)
         {
-            throw new NotImplementedException();
+            Db.Remove(entity);
         }
 
         public T GetById(int Id)
