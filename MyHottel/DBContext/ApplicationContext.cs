@@ -26,6 +26,7 @@ namespace MyHottel.DBContext.ApplicationContext
             //optionsBuilder.UseMySql("server=localhost;user=admin;password=123;database=usersdb;",
             //new MySqlServerVersion(new Version(10,4,27)));
             optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=MyHottel;Username=postgres;Password=123");
+            //optionsBuilder.UseSqlite("Data Source=hottel.db");
         }
     }
 }

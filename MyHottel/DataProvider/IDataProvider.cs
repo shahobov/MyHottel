@@ -14,5 +14,6 @@ namespace MyHottel.DataProvider
         void Update(T entity);
         void Delete(T entity);
         T GetById(int Id);
+        T GetAll();
     }
 }

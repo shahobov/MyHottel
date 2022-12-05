@@ -6,19 +6,11 @@ using System.Xml.Linq;
 
 namespace MyHottel.DataProvider
 {
+
+
     public class DatabaseDataProvider<T> : IDataProvider<T> where T : EntityBase
     {
-        ApplicationContext Db = new();
-
-        //private readonly  List<T> _data;
-        public List<T> ListOfEntity = new();
-
-
-        public DatabaseDataProvider(List<T> data)
-        {
-            ListOfEntity = data;
-        }
-
+        private ApplicationContext Db = new ApplicationContext();
         public void Add(T entity)
         {
             Db.AddRange(entity);
@@ -30,10 +22,14 @@ namespace MyHottel.DataProvider
             Db.Remove(entity);
         }
 
+        public T GetAll()
+        {
+            return null;
+        }
+
         public T GetById(int Id)
         {
-            var item = ListOfEntity.FirstOrDefault(d => d.Id == Id);
-            return item;
+            return Db.Set<T>().FirstOrDefault(d => d.Id == Id);
         }
 
         public void Update(T entity)

@@ -41,6 +41,10 @@ namespace Hottel.Services
         }
 
         protected abstract bool IsEntityValid(T entity, out string reason);
-        
+
+        public T GetAll()
+        {
+            return _dataProvider.GetAll();
+        }
     }
 }

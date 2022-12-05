@@ -8,5 +8,6 @@ namespace MyHottel.Abstractions.Services
         void Update(T entity);
         void Delete(T entity);
         T GetById(int id);
+        T GetAll();
     }
 }

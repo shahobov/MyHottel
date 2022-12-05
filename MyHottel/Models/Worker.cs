@@ -4,6 +4,6 @@ namespace MyHottel.Models
 {
     public class Worker : Person
     {
-        public decimal Solary { get; set; }
+        public decimal Salary { get; set; }
     }
 }

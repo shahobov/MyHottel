@@ -8,12 +8,12 @@ PersonService personService = new PersonService(new DatabaseDataProvider<Person>
 
 //Person person = new Person()
 //{
-//    Id = 16,
-//    Name = "Asliddin",
-//    FirstName = "Fakhriddinovich",
-//    Address = "Istaravshan",
-//    Birthday = "1995-01-26",
-//    PhoneNumber = "+992929997540"
+//    Id=20,
+//    Name="Asliddin",
+//    FirstName="Fakhriddinovich",
+//    Address="Istaravshan",
+//    Birthday="1995-01-26",
+//    PhoneNumber="+992929997540"
 //};
 
 //personService.Add(person);
@@ -23,5 +23,7 @@ personList.Add(personService.GetById(1));
 
 foreach (var item in personList)
 {
-    Console.WriteLine(item.FirstName);
+    Console.WriteLine(item.Name);
 }
+
+
